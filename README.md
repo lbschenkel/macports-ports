@@ -8,6 +8,7 @@ I contribute to the project and I am the official maintainer of a few ports:
 - free42: <http://thomasokken.com/free42>
 - gpgme: <https://www.gnupg.org/software/gpgme>
 - hunspell-dict-pt_BR: <https://pt-br.libreoffice.org/projetos/vero>
+- hunspell-dict-sv_SE: <https://sfol.se>
 - neomutt: <https://www.neomutt.org>
 - ntpsec: <https://www.ntpsec.org>
 - opensc: <https://github.com/OpenSC/OpenSC/wiki>
