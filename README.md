@@ -1,7 +1,6 @@
-This is [my](https://github.com/lbschenkel) personal fork of the
-MacPorts ports tree.
+This is [my](https://github.com/lbschenkel) fork of the MacPorts ports tree.
 
-I contribute to the project and I am the official maintainer of a few ports:
+I am a member of the project and I am the maintainer for a few ports:
 
 - argyll: <http://argyllcms.com>
 - dict (+libmaa): <http://www.dict.org>
@@ -17,9 +16,6 @@ I contribute to the project and I am the official maintainer of a few ports:
 - usbids: <http://www.linux-usb.org/usb.ids>
 - usbutils: <https://github.com/gregkh/usbutils>
 - yubico-piv-tool: <https://developers.yubico.com/yubico-piv-tool>
-
-Those are mostly software I use and either were not in MacPorts or did not
-have a maintainer.
 
 In case there's an issue with the above ports the usual way to report that
 is by [creating a ticket](https://trac.macports.org/newticket) in the
