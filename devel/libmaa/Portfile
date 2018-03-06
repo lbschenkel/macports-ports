@@ -16,10 +16,10 @@ master_sites            sourceforge:project/dict/${name}/${name}-${version}
 checksums               rmd160  e4c0fae2eb9bb101ae9db70005e0ee39c59ed4fd \
                         sha256  b7f07472d94c1fab51be8041650d1f659a21cc973ca960dd9260b70a89fd5320
 
+depends_build           port:mk-configure
 use_configure           no
-build.type              gnu
-depends_build           port:libtool
-configure.env           LIBTOOL=${prefix}/bin/glibtool
-build.target            lib
+build.cmd               ${prefix}/bin/mkcmake
+build.args              PREFIX=${prefix}
+destroot.args           ${build.args}
 
 livecheck.regex         /${name}-(\\d+(?:\\.\\d+)*)${extract.suffix}

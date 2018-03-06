@@ -1,0 +1,25 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+#
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        cheusov mk-configure 0.29.3 mk-configure-
+
+categories          devel
+license             BSD
+platforms           darwin
+maintainers         {schenkel.net:leonardo @lbschenkel} openmaintainer
+
+description         A lightweight replacement for GNU autotools
+long_description    ${description}
+
+checksums           rmd160  b67299e934a5b2d177804711ac8c24a210d98039 \
+                    sha256  32d1991a0e25c44c454559099fe9ffd2d63cf667d21e8b6c1c97e965ba81ec3e
+
+depends_build       port:bmake
+use_configure       no
+build.cmd           ${prefix}/bin/bmake
+build.args          PREFIX=${prefix} \
+                    LIBEXECDIR=${prefix}/libexec \
+                    MANDIR=${prefix}/share/man
+destroot.args       ${build.args}
