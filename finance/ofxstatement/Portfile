@@ -1,0 +1,23 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8::et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        kedder ofxstatement 0.6.1
+
+maintainers         {lbschenkel @lbschenkel} openmaintainer
+categories          finance
+description         Tool to convert proprietary bank statement to OFX format, suitable for importing to GnuCash
+long_description    ${description}
+platforms           darwin
+license             GPL-3
+
+checksums           rmd160  33bfd3761967422ee75b40b24971533d5e68eba9 \
+                    sha256  ec835296dc44f863bdcdb78b5d3ea46e2dfb0f303e8b2a9d7ef858f81e5090b5 \
+                    size    29424
+
+python.default_version      36
+
+depends_lib-append  port:py${python.version}-appdirs \
+                    port:py${python.version}-setuptools
