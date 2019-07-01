@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        telepresenceio telepresence 0.101
+categories          sysutils
+platforms           darwin
+supported_archs     x86_64
+license             Apache-2
+
+maintainers         {lbschenkel @lbschenkel} openmaintainer
+
+description         Local development against a remote Kubernetes or OpenShift cluster
+long_description    ${description}
+
+master_sites        https://s3.amazonaws.com/datawire-static-files/telepresence/
+checksums           rmd160  279f481b8cbab7948dd30e4365ada3774fa4cbea \
+                    sha256  68c56a288646c2319785c85a68fc08e85faf18fac1d8dcda53603f3f72ec99ef \
+                    size    609228
+
+depends_lib         port:sshfs
+use_configure       no
+
+python.default_version  37
+python.versions         35 36 37
+
+build {
+}
+destroot {
+    xinstall ${worksrcpath}/bin/telepresence \
+             ${destroot}${prefix}/bin/telepresence
+    xinstall ${worksrcpath}/libexec/sshuttle-telepresence \
+             ${destroot}${prefix}/libexec/sshuttle-telepresence
+}
