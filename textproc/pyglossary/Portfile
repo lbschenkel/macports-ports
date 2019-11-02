@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem              1.0
+PortGroup               python 1.0
+PortGroup               github 1.0
+
+github.setup            ilius pyglossary 3.2.1
+
+categories              textproc python
+platforms               darwin
+license                 GPL-3+
+maintainers             {lbschenkel @lbschenkel} openmaintainer
+supported_archs         noarch
+
+description             TBD
+long_description        TBD
+
+checksums               rmd160  6b878780455549dd70d9a8660a9e623b40faaee3 \
+                        sha256  e52429de75dae805c39667362b95da6029e3d0ee0b21ac0eb9035d0e67f7e355 \
+                        size    212562
+
+python.default_version  ${python.default_version}
+
+depends_lib-append      port:py${python.version}-beautifulsoup4 \
+                        port:py${python.version}-jinja2 \
+                        port:py${python.version}-lxml \
+                        port:py${python.version}-pyicu \
+
+variant gtk description {Enable GTK GUI support} {
+    depends_lib-append  port:py${python.version}-gobject3
+}
+variant tk description {Enable Tk GUI support} {
+    depends_lib-append  port:py${python.version}-tkinter \
+                        port:tix
+}
+
+post-destroot {
+    reinplace -W ${destroot}${python.prefix}/bin "s|${destroot}||g" pyglossary
+}
